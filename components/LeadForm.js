@@ -1,0 +1,33 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState } from 'react';
+import { Button } from './UI';
+import { useNavigate } from 'react-router-dom';
+import { Lock, Loader2 } from 'lucide-react';
+export const LeadForm = () => {
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        company: '',
+        whatsapp: '',
+        email: '',
+        segment: '',
+        volume: ''
+    });
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        // Simulate API Call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        // In a real app, send data to webhook/CRM here
+        console.log('Form Submitted:', formData);
+        // Tracking Event
+        console.log('Event: form_submit');
+        setLoading(false);
+        navigate('/obrigado');
+    };
+    return (_jsxs("div", { className: "bg-surface-800 border border-border-subtle/50 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden", children: [_jsx("div", { className: "absolute -top-20 -right-20 w-40 h-40 bg-primary-500 rounded-full blur-[100px] opacity-20" }), _jsxs("div", { className: "relative z-10", children: [_jsx("h3", { className: "font-display font-bold text-2xl text-text-100 mb-2", children: "Agendar Demonstra\u00E7\u00E3o" }), _jsx("p", { className: "text-text-300 mb-6 text-sm", children: "Preencha para receber um diagn\u00F3stico personalizado." }), _jsxs("form", { onSubmit: handleSubmit, className: "space-y-4", children: [_jsxs("div", { children: [_jsx("label", { htmlFor: "name", className: "block text-xs font-semibold text-text-300 mb-1 uppercase tracking-wider", children: "Nome *" }), _jsx("input", { required: true, type: "text", name: "name", id: "name", value: formData.name, onChange: handleChange, className: "w-full bg-bg-900 border border-border-subtle rounded-lg px-4 py-3 text-text-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all placeholder-text-300/30", placeholder: "Seu nome completo" })] }), _jsxs("div", { children: [_jsx("label", { htmlFor: "company", className: "block text-xs font-semibold text-text-300 mb-1 uppercase tracking-wider", children: "Empresa *" }), _jsx("input", { required: true, type: "text", name: "company", id: "company", value: formData.company, onChange: handleChange, className: "w-full bg-bg-900 border border-border-subtle rounded-lg px-4 py-3 text-text-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all placeholder-text-300/30", placeholder: "Nome da sua empresa" })] }), _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [_jsxs("div", { children: [_jsx("label", { htmlFor: "whatsapp", className: "block text-xs font-semibold text-text-300 mb-1 uppercase tracking-wider", children: "WhatsApp *" }), _jsx("input", { required: true, type: "tel", name: "whatsapp", id: "whatsapp", value: formData.whatsapp, onChange: handleChange, className: "w-full bg-bg-900 border border-border-subtle rounded-lg px-4 py-3 text-text-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all placeholder-text-300/30", placeholder: "(00) 00000-0000" })] }), _jsxs("div", { children: [_jsx("label", { htmlFor: "email", className: "block text-xs font-semibold text-text-300 mb-1 uppercase tracking-wider", children: "E-mail Corporativo *" }), _jsx("input", { required: true, type: "email", name: "email", id: "email", value: formData.email, onChange: handleChange, className: "w-full bg-bg-900 border border-border-subtle rounded-lg px-4 py-3 text-text-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all placeholder-text-300/30", placeholder: "nome@empresa.com" })] })] }), _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [_jsxs("div", { children: [_jsx("label", { htmlFor: "segment", className: "block text-xs font-semibold text-text-300 mb-1 uppercase tracking-wider", children: "Segmento" }), _jsxs("select", { name: "segment", id: "segment", value: formData.segment, onChange: handleChange, className: "w-full bg-bg-900 border border-border-subtle rounded-lg px-4 py-3 text-text-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all", children: [_jsx("option", { value: "", disabled: true, children: "Selecione" }), _jsx("option", { value: "varejo", children: "Varejo" }), _jsx("option", { value: "servicos", children: "Servi\u00E7os" }), _jsx("option", { value: "saude", children: "Sa\u00FAde/Est\u00E9tica" }), _jsx("option", { value: "ecommerce", children: "E-commerce" }), _jsx("option", { value: "outro", children: "Outro" })] })] }), _jsxs("div", { children: [_jsx("label", { htmlFor: "volume", className: "block text-xs font-semibold text-text-300 mb-1 uppercase tracking-wider", children: "Conversas/Dia" }), _jsxs("select", { name: "volume", id: "volume", value: formData.volume, onChange: handleChange, className: "w-full bg-bg-900 border border-border-subtle rounded-lg px-4 py-3 text-text-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all", children: [_jsx("option", { value: "", disabled: true, children: "Selecione" }), _jsx("option", { value: "<50", children: "At\u00E9 50" }), _jsx("option", { value: "50-200", children: "50 - 200" }), _jsx("option", { value: "200-500", children: "200 - 500" }), _jsx("option", { value: "500+", children: "500+" })] })] })] }), _jsxs("div", { className: "flex items-start gap-3 mt-4", children: [_jsx("input", { required: true, type: "checkbox", id: "lgpd", className: "mt-1 w-4 h-4 rounded text-primary-500 bg-bg-900 border-border-subtle focus:ring-primary-500 focus:ring-offset-bg-900" }), _jsx("label", { htmlFor: "lgpd", className: "text-xs text-text-300 leading-tight", children: "Concordo em receber contatos da Conversy e aceito a Pol\u00EDtica de Privacidade." })] }), _jsxs(Button, { type: "submit", fullWidth: true, disabled: loading, className: "mt-6 group", children: [loading ? _jsx(Loader2, { className: "animate-spin mr-2" }) : null, loading ? 'Enviando...' : 'Solicitar Demonstração'] }), _jsxs("div", { className: "flex items-center justify-center gap-2 text-text-300 text-xs mt-4", children: [_jsx(Lock, { className: "w-3 h-3" }), _jsx("span", { children: "Seus dados est\u00E3o seguros" })] })] })] })] }));
+};

@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Header, Footer } from '../components/Layout';
+import { Section, Headline } from '../components/UI';
+export const Legal = ({ title }) => {
+    return (_jsxs("div", { className: "min-h-screen bg-bg-950 font-sans text-text-100 flex flex-col", children: [_jsx(Header, {}), _jsx("main", { className: "flex-grow pt-24", children: _jsxs(Section, { children: [_jsx(Headline, { children: title }), _jsxs("div", { className: "prose prose-invert max-w-none text-text-300", children: [_jsxs("p", { children: ["\u00DAltima atualiza\u00E7\u00E3o: ", new Date().toLocaleDateString()] }), _jsxs("p", { className: "mt-8", children: ["Esta \u00E9 uma p\u00E1gina gen\u00E9rica de ", title, ". Em um ambiente de produ\u00E7\u00E3o, aqui estariam os textos jur\u00EDdicos completos referentes \u00E0 LGPD, coleta de dados, cookies e termos de servi\u00E7o da Conversy."] }), _jsx("h3", { className: "text-xl font-bold text-text-100 mt-6 mb-2", children: "1. Coleta de Dados" }), _jsx("p", { children: "Coletamos apenas os dados necess\u00E1rios para a presta\u00E7\u00E3o do servi\u00E7o e contato comercial..." })] })] }) }), _jsx(Footer, {})] }));
+};

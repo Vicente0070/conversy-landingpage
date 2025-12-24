@@ -1,0 +1,1 @@
+{"root":["./app.tsx","./constants.ts","./index.tsx","./types.ts","./vite.config.ts","./components/layout.tsx","./components/leadform.tsx","./components/ui.tsx","./pages/landing.tsx","./pages/legal.tsx","./pages/thankyou.tsx","./sections/casestudy.tsx","./sections/finalcta.tsx","./sections/hero.tsx","./sections/landingsections.tsx"],"version":"5.9.3"}
